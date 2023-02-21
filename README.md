@@ -23,9 +23,9 @@ Initially I thought of implementing the logger with singleton design pattern but
 ## Design Choices:
 1. Singleton vs Dependency Injection. Singleton seems like a bad idea for production code bases and has some limitations. So I used dependency injection to write my logging module and corresponding user oddeven service
 2. Write policies: I have demonstarted two custom sink write policies in my project
-	2.1 Non blocking lazy writing using two queues in consoleSink
-	2.2 Synchronous Blocking in fileSink. (Writing to file is faster than console so I chose these policies for the corresponding sinks)
-	2.3 [TODO] Asynchronous writing using a thread pool
+	1. Non blocking lazy writing using two queues in consoleSink
+	2. Synchronous Blocking in fileSink. (Writing to file is faster than console so I chose these policies for the corresponding sinks)
+	3. [TODO] Asynchronous writing using a thread pool
 If the target I/O (Disk, Remote Storage, Network) is very fast we can go ahead with blocking but if writing to our target is slow we shouldn't block applications for logging. So in that case lazy writing gives optimal performance as the user applications are no longer blocked by I/O.
 3. Need better string handling. I have used std::string for now. But I need to use a better string library with less copying and better performance.
 
