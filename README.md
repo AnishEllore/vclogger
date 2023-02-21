@@ -1,3 +1,4 @@
+
 # Visual Concepts Logger
 
 [![CodeFactor](https://www.codefactor.io/repository/github/anishellore/vclogger/badge)](https://www.codefactor.io/repository/github/anishellore/vclogger)
@@ -39,9 +40,10 @@ If the target I/O (Disk, Remote Storage, Network) is very fast we can go ahead w
 
 Tested on Mac OS 13.2.1
 
-```
-1. make clean
-2. make run
+```bash
+#!/bin/bash
+make clean
+make run
 ```
 
 ### Example
@@ -54,7 +56,7 @@ int main()
  // You can update custom loggers and custom sinks in config store
  std::shared_ptr<IVCLogger> logger = Config().getLogger();
  logger->log(VCLogLevel::VCInfo, "First good log");
- 
+
  return 0;
 }
 ```
