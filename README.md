@@ -37,6 +37,21 @@ If the target I/O (Disk, Remote Storage, Network) is very fast we can go ahead w
 ```
 Tested on Mac OS 13.2.1
 
+### Example
+```cpp
+#include <yelloger.h>
+#include <config.hpp>
+
+int main()
+{
+	// You can update custom loggers and custom sinks in config store
+	logger = Config().getLogger();
+	logger->log(VCLogLevel::VCInfo, "First good log");
+	
+	return 0;
+}
+```
+
 ### Directory Structure
 ```
 	.
