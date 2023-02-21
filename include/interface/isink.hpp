@@ -17,9 +17,10 @@ namespace vclogger {
         public:
             // Write to the sink with the given log level 
             // and discards the message if the log level is lower than the sink's log level
-            virtual void sink(VCLogLevel loglevel, std::string message) = 0;
+            virtual void sink(VCLogLevel loglevel, const std::string& message) = 0;
             // Set the sink location for example, networl location, file location, etc.
-            virtual void setSinkLocation(std::string location) = 0;
+            virtual void setSinkLocation(const char* location) = 0;
+            virtual void setSinkLocation(const std::string& location) = 0;
             // Set the log level for the sink
             virtual void setLogLevel(VCLogLevel logLevel) = 0;
             virtual ~ISink() = default;

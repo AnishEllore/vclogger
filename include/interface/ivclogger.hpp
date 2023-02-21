@@ -20,7 +20,7 @@ namespace vclogger {
     {
     public:
         // generic interface to log messages
-        virtual void log(VCLogLevel mpriority, std::string message) = 0;
+        virtual void log(VCLogLevel mpriority, const std::string& message) = 0;
         // interface to change log levels at run time depemnding on the system load
         virtual void setLogLevels(VCLogLevel logLevel) = 0;
         // interface to add custom sinks

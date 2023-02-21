@@ -20,13 +20,21 @@ namespace vclogger {
     class FileSink: public ISink {
     public:
         // inherited from ISink
-        void sink(VCLogLevel mLogLevel, std::string message) {
+        void sink(VCLogLevel mLogLevel, const std::string& message) {
             if(mLogLevel < vcLogLevel_) return;
             std::unique_lock<std::mutex> msglock(mtxFileSink_);
             logfile_ << message << std::endl;
         }
         // sets the sink location for the sink in a safe manner
-        void setSinkLocation(std::string location) {
+        void setSinkLocation(const std::string& location) {
+            std::unique_lock<std::mutex> sinklock(mtxFileSink_);
+            if(logfile_.is_open()) {
+                logfile_.close();
+            }
+            logfile_.open(location);
+            logfile_ << "[FileSink] Sink location set to file " << location << std::endl;
+        }
+        void setSinkLocation(const char* location) {
             std::unique_lock<std::mutex> sinklock(mtxFileSink_);
             if(logfile_.is_open()) {
                 logfile_.close();

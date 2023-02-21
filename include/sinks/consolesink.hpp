@@ -20,15 +20,18 @@ namespace vclogger {
     class ConsoleSink: public ISink {
     public:
         // inherited from ISink
-        void sink(VCLogLevel mLogLevel, std::string message) {
+        void sink(VCLogLevel mLogLevel, const std::string& message) {
             if(mLogLevel < vcLogLevel_) return;
             std::unique_lock<std::mutex> msglock(mtxMsgQueue_);
-            msgQueue_.push(message);
+            msgQueue_.push(std::string(message));
             msglock.unlock();
             cv_.notify_one();
         }
         // console location is always console, can be extended to support other GUI options but I don't know about them
-        void setSinkLocation(std::string location) {
+        void setSinkLocation(const std::string& location) {
+            std::cout << "[ConsoleSink] Sink location set to console:" << location <<std::endl;
+        }
+        void setSinkLocation(const char* location) {
             std::cout << "[ConsoleSink] Sink location set to console:" << location <<std::endl;
         }
         // sets the log level for the sink

@@ -37,7 +37,13 @@ namespace vclogger{
             sink->setLogLevel(logLevel);
         }
         // log messages
-        void log(VCLogLevel logLevel, std::string message) {
+        void log(VCLogLevel logLevel, const std::string& message) {
+            std::unique_lock<std::mutex> sinklock(mtxLogger_);
+            for(auto &sink:sinks_) {
+                sink->sink(logLevel, format_log_message(logLevel, message));
+            }
+        }
+        void log(VCLogLevel logLevel, std::string& message) {
             std::unique_lock<std::mutex> sinklock(mtxLogger_);
             for(auto &sink:sinks_) {
                 sink->sink(logLevel, format_log_message(logLevel, message));
@@ -53,7 +59,7 @@ namespace vclogger{
 
         // [TODO] Add support for custom formatters. Can add colors, regex filters, etc.
         // Predefined log formatting to print timestamp, log level and message
-        std::string format_log_message(VCLogLevel logLevel, std::string message) {
+        std::string format_log_message(VCLogLevel logLevel, const std::string& message) {
             std::time_t t = std::time(nullptr);
             std::tm tm = *std::localtime(&t);
             std::string time = std::to_string(tm.tm_year + 1900) + "-" + std::to_string(tm.tm_mon + 1) + "-" + std::to_string(tm.tm_mday) + " " + std::to_string(tm.tm_hour) + ":" + std::to_string(tm.tm_min) + ":" + std::to_string(tm.tm_sec);
