@@ -29,7 +29,7 @@ void find_all_even_numbers(int n) {
     // testing exception handling logs
     try{
         throw std::invalid_argument("Throwing Invalid Args Exception");
-        LOG_INFO("Failed in throwing Exception");
+        // LOG_INFO("Failed in throwing Exception");
     }
     catch(std::exception &e) {
         LOG_ERROR("Exception: "+std::string(e.what()));
