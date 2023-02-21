@@ -44,7 +44,7 @@ Tested on Mac OS 13.2.1
 int main()
 {
 	// You can update custom loggers and custom sinks in config store
-	logger = Config().getLogger();
+	std::shared_ptr<IVCLogger> logger = Config().getLogger();
 	logger->log(VCLogLevel::VCInfo, "First good log");
 	
 	return 0;
