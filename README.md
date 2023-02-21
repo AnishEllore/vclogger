@@ -1,3 +1,4 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/anishellore/vclogger/badge)](https://www.codefactor.io/repository/github/anishellore/vclogger)
 # Visual Concepts Logger
 ## Features
 1. Thread safe logger
