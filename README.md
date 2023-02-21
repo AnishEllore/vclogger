@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/674138339377421ba387cd3945621e2b)](https://app.codacy.com/gh/AnishEllore/vclogger?utm_source=github.com&utm_medium=referral&utm_content=AnishEllore/vclogger&utm_campaign=Badge_Grade_Settings)
 [![CodeFactor](https://www.codefactor.io/repository/github/anishellore/vclogger/badge)](https://www.codefactor.io/repository/github/anishellore/vclogger)
 
 # Visual Concepts Logger
