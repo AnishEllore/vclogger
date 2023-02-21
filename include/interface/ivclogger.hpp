@@ -26,6 +26,5 @@ namespace vclogger {
         // interface to add custom sinks
         virtual void addSink(std::shared_ptr<ISink> sink) = 0;
         virtual ~IVCLogger() = default;
-
     };
 }

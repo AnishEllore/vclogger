@@ -41,9 +41,7 @@ namespace vclogger {
             std::cout << "[ConsoleSink] Sink log level set to " << get_enum_value(vcLogLevel_) << std::endl;
         }
         // constructor to initialize the writer thread
-        ConsoleSink() {
-            runCondition_ = true;
-            vcLogLevel_ = VCLogLevel::VCInfo;
+        ConsoleSink(): vcLogLevel_(VCLogLevel::VCInfo), sinkLocation_("console"), runCondition_(true){
             writerThread_ = std::thread(&ConsoleSink::lazy_writer, this);
         }
         // destructor to ensure that the writer thread logs pending messages and is joined before exiting

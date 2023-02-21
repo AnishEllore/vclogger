@@ -37,7 +37,6 @@ void test_logger() {
 
 
 int main() {
-
     std::shared_ptr<ISink> csink = std::make_shared<ConsoleSink>();
     std::shared_ptr<ISink> fsink = std::make_shared<FileSink>();
 

@@ -49,8 +49,7 @@ namespace vclogger {
             logfile_ << "[ConsoleSink] Sink log level set to " << get_enum_value(vcLogLevel_) << std::endl;
         }
         // constructor to setup the sink
-        FileSink() {
-            vcLogLevel_ = VCLogLevel::VCInfo;
+        FileSink(): vcLogLevel_(VCLogLevel::VCInfo) {
             setSinkLocation("vclogger.log");
         }
         // destructor to ensure file is closed before exiting
