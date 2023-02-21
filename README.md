@@ -39,7 +39,6 @@ Tested on Mac OS 13.2.1
 
 ### Example
 ```cpp
-#include <yelloger.h>
 #include <config.hpp>
 
 int main()
