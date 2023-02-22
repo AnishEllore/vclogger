@@ -1,4 +1,4 @@
-bin/
 .vscode/
+.trunk/
 .DS_Store
 vclogger.log
