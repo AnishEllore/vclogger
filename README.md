@@ -1,6 +1,7 @@
 
 # Visual Concepts Logger
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/674138339377421ba387cd3945621e2b)](https://app.codacy.com/gh/AnishEllore/vclogger?utm_source=github.com&utm_medium=referral&utm_content=AnishEllore/vclogger&utm_campaign=Badge_Grade_Settings)
 [![CodeFactor](https://www.codefactor.io/repository/github/anishellore/vclogger/badge)](https://www.codefactor.io/repository/github/anishellore/vclogger)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/81628150fc744467b8df864879318137)](https://www.codacy.com/gh/AnishEllore/vclogger/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AnishEllore/vclogger&amp;utm_campaign=Badge_Grade)
 
