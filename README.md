@@ -6,14 +6,14 @@
 
 ## Features
 
-1. Thread safe logger
-2. Supports multiple log levels
-3. Supports custom sinks
-4. Supports appending multiple sinks to the logger
-5. Supports custom loggers
-6. Supports setting runtime log levels
-7. Well documented code
-8. Can easily extend to support file rotation
+1. Thread safe logger.
+2. Supports multiple log levels.
+3. Supports custom sinks.
+4. Supports appending multiple sinks to the logger.
+5. Supports custom loggers.
+6. Supports setting runtime log levels.
+7. Well documented code.
+8. Can easily extend to support file rotation.
 
 ### Motivation
 
