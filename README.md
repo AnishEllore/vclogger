@@ -24,7 +24,7 @@
 
 ### My Experience
 
-Initially I thought of implementing the logger with singleton design pattern but later I realized that it is not a good idea to use singleton in production code bases. So I used dependency injection to write my logger and corresponding sink. It was very fun to write the logger and sink using dependency injection. I'm very happy with the way this project turned out! Thanks Visual Concepts team for making me write this logger!
+Initially I thought of implementing the logger with singleton design pattern but later I realized that it is not a good idea to use singleton in production code bases. So I used dependency injection to write my logger and corresponding sink. It was very fun to write the logger and sink using dependency injection. I'm very happy with the way this project turned out!
 
 ### Design Choices
 
