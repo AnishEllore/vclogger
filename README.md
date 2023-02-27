@@ -1,5 +1,5 @@
 
-# Visual Concepts Logger
+# C++ Logger
 
 [![CodeFactor](https://www.codefactor.io/repository/github/anishellore/vclogger/badge)](https://www.codefactor.io/repository/github/anishellore/vclogger)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/81628150fc744467b8df864879318137)](https://www.codacy.com/gh/AnishEllore/vclogger/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AnishEllore/vclogger&amp;utm_campaign=Badge_Grade)
