@@ -14,21 +14,19 @@
 namespace vclogger {
 class FileSink : public ISink {
 public:
-  FileSink(const std::string &location) : FileSink(location.c_str()) {}
-
   FileSink() : FileSink("vclogger.log") {}
 
   FileSink(const char *location)
       : log_level_(VCLogLevel::VCInfo),
         flush_interval_in_ms_(DEFAULT_FLUSH_INTERVAL_IN_MS),
-        max_buffer_size_(DEFAULT_MAX_BUFFER_SIZE) {
+        max_buffer_size_(DEFAULT_MAX_BUFFER_SIZE), is_running_(true) {
     setSinkLocation(location);
     flush_thread_ = std::thread(&FileSink::flushLoop, this);
   }
 
   FileSink(int flush_interval_in_ms, int max_buffer_size)
       : flush_interval_in_ms_(flush_interval_in_ms),
-        max_buffer_size_(max_buffer_size) {}
+        max_buffer_size_(max_buffer_size), is_running_(true) {}
 
   ~FileSink() {
     {
