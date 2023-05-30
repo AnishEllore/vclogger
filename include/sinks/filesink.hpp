@@ -74,7 +74,6 @@ private:
       if (now - last_flush_time_ >=
               std::chrono::milliseconds(flush_interval_in_ms_) ||
           log_queue_.size() >= max_buffer_size_) {
-
         std::queue<std::string> messages_to_flush;
         messages_to_flush.swap(log_queue_);
         lock.unlock();
