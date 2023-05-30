@@ -16,7 +16,7 @@ class FileSink : public ISink {
 public:
   FileSink() : FileSink("vclogger.log") {}
 
-  FileSink(const char *location)
+  explicit FileSink(const char *location)
       : log_level_(VCLogLevel::VCInfo),
         flush_interval_in_ms_(DEFAULT_FLUSH_INTERVAL_IN_MS),
         max_buffer_size_(DEFAULT_MAX_BUFFER_SIZE), is_running_(true) {
